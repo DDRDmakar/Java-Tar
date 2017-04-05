@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Java-Tar.iml" filepath="$PROJECT_DIR$/Java-Tar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/t.iml" filepath="$PROJECT_DIR$/t.iml" />
     </modules>
   </component>
 </project>
