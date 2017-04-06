@@ -2,16 +2,14 @@ package tar;
 
 import org.apache.commons.io.FileUtils;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 // Основной класс, реализует "склеивание" файлов в один и их разделение.
 
-public final class Tar {
+final class Tar {
 
     /**
      * Function for easy getting file as one solid string.
@@ -19,13 +17,8 @@ public final class Tar {
      * @return one string - all content of given file
      * @throws IOException if file reading failed
      */
-    private String getFullFile(String path) throws IOException {
-            StringBuilder target = new StringBuilder();
-            BufferedReader currentFile = new BufferedReader(new FileReader(path));
-            String currentLine;
-            while ((currentLine = currentFile.readLine()) != null) target.append(currentLine + "\n");
-            if (target.indexOf("\n") != -1)target.deleteCharAt(target.lastIndexOf("\n"));
-            return target.toString();
+    String getFullFile(String path) throws IOException {
+        return FileUtils.readFileToString(new File(path), "utf-8");
     }
 
     /**
