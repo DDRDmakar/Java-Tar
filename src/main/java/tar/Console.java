@@ -21,9 +21,8 @@ class Console {
 
     //=========================================================================
 
-    void commandReader(String[] args) {
+    void commandReader(String[] args) throws CmdLineException {
         CmdLineParser parser = new CmdLineParser(this);
-        try {
             parser.parseArgument(args);
 
             Tar stringProcessor = new Tar();
@@ -40,9 +39,6 @@ class Console {
                     tarname != null
                 ) stringProcessor.storageToFiles(tarname);
             else System.err.println("Error - incorrect arguments.");
-        }
-        catch (CmdLineException e) {
-            System.err.println("e = " + e.toString());
-        }
+
     }
 }

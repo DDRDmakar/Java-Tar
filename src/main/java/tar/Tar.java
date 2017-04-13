@@ -42,6 +42,7 @@ final class Tar {
         }
         catch (IOException e) {
             System.err.println("IO error: " + e.getMessage());
+            return;
         }
 
     }
